@@ -12,7 +12,7 @@ let router = <Provider store={store}>
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={AllPostComponent}></IndexRoute>
-            <Route path="/singlepost" component={SinglePostComponent}></Route>
+            <Route path="/singlepost/:codeId" component={SinglePostComponent}></Route>
         </Route>
     </Router>
 </Provider>

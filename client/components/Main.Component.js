@@ -1,5 +1,9 @@
 import React from 'react';
+import {Link} from 'react-router';
 export default class MainComponent extends React.Component {
+    componentDidMount(){
+        this.props.fetchPostsData()
+    }
     render() {
         let navStyle = {
             'boxShadow': "1px 1px 12px black",
@@ -19,8 +23,7 @@ export default class MainComponent extends React.Component {
                     </div>
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav navbar-right">
-                            <li className="active"><a href="#">Link <span className="sr-only">(current)</span></a></li>
-                            <li><a href="#">Link</a></li>
+                            <li><Link to='/'>Homepage</Link></li>
                             <li><a href="#">Link</a></li>
                             <li><a href="#">Link</a></li>
                         </ul>
@@ -28,7 +31,6 @@ export default class MainComponent extends React.Component {
                 </nav>
 
                 <div className="col-md-8 col-md-offset-2" style={boxProps}>
-
                     {React.cloneElement(this.props.children,this.props)}
                 </div>
             </div>

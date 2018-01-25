@@ -8,6 +8,7 @@ let mapDispatchToProps = (dispach) => {
 }
 
 let mapStateToProps = (storeData) => {
+    debugger;
     return {
         postList: storeData.posts,
         commentList: storeData.comments

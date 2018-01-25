@@ -4,7 +4,7 @@ import PostDetailsComponent from './post.details.component';
 export default class AllPostComponent extends React.Component {
     render() {
         let postDetailsCreated = this.props.postList.map((p, index) => {
-            return <PostDetailsComponent post={p} key={index} />
+            return <PostDetailsComponent post={p} key={index} index={index} {...this.props} />
         })
 
         return (
