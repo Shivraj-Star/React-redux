@@ -23,12 +23,12 @@ router.route('/posts').get((req,res)=>{
 })
 
 app.use('/api',router);
-
-app.listen(7770, 'localhost', function(err) {
+let serverPort = process.env.PORT ||3000
+app.listen(serverPort, 'localhost', function(err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:7770');
+  console.log('Listening at http://localhost:': serverPort);
 });
