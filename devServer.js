@@ -23,12 +23,17 @@ router.route('/posts').get((req,res)=>{
 })
 
 app.use('/api',router);
-let serverPort = process.env.PORT ||3000
-app.listen(serverPort, 'localhost', function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
+app.set('port', process.env.PORT || 3000);
 
-  console.log('Listening at http://localhost:', serverPort);
+var server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + server.address().port);
 });
+
+// app.listen(serverPort, 'localhost', function(err) {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+
+//   console.log('Listening at http://localhost:', serverPort);
+// });
