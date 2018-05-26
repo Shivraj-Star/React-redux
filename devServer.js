@@ -30,5 +30,5 @@ app.listen(serverPort, 'localhost', function(err) {
     return;
   }
 
-  console.log('Listening at http://localhost:': serverPort);
+  console.log('Listening at http://localhost:', serverPort);
 });
